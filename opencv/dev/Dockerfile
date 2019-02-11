@@ -1,3 +1,5 @@
+# https://github.com/flacjacket/docker_images/blob/opencv-tx2/Dockerfile
+
 FROM flacjacket/cuda-tx2:3.3-20181207 as opencv_builder
 
 COPY --from=flacjacket/cmake-tx2:3.13.1-20181207 /cmake.tar.gz /
