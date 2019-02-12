@@ -3,8 +3,8 @@
 NS ?= mannyfm
 VERSION ?= latest
 
-IMAGE_NAME ?= tx2-opencv
-CONTAINER_NAME ?= tx2-opencv
+IMAGE_NAME ?= tx2-tensorflow
+CONTAINER_NAME ?= tx2-tensorflow
 CONTAINER_INSTANCE ?= default
 DOCKER ?= tx2-docker
 
