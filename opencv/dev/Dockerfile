@@ -20,6 +20,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends build-essential
                                                 libgstreamer1.0-dev \
                                                 libgstreamer-plugins-base1.0-dev \
                                                 gstreamer1.0-plugins-base \
+																								libgtk2.0-dev libtbb-dev qt5-default \
   && ln -sf python3.5 /usr/bin/python3 \
   && ln -sf python3 /usr/bin/python \
   && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \

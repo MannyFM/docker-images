@@ -1,7 +1,7 @@
 #include make_env
 
 NS ?= mannyfm
-VERSION ?= latest
+VERSION ?= gtk-3.4.5
 
 IMAGE_NAME ?= tx2-opencv-dev
 CONTAINER_NAME ?= tx2-opencv-dev
