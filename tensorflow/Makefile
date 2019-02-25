@@ -1,7 +1,7 @@
 #include make_env
 
 NS ?= mannyfm
-VERSION ?= latest
+VERSION ?= gtk
 
 IMAGE_NAME ?= tx2-tensorflow
 CONTAINER_NAME ?= tx2-tensorflow
