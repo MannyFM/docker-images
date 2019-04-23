@@ -11,7 +11,7 @@ DOCKER ?= tx2-docker
 .PHONY: build push shell run start stop rm release 
 
 build: Dockerfile
-	$(DOCKER) build -t $(NS)/$(IMAGE_NAME):$(VERSION) -f Dockerfile .
+	$(DOCKER) build -t $(NS)/$(IMAGE_NAME):$(VERSION) --network=host -f Dockerfile .
 
 push:
 	$(DOCKER) push $(NS)/$(IMAGE_NAME):$(VERSION)

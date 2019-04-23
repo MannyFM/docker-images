@@ -1,7 +1,6 @@
 # https://raw.githubusercontent.com/flacjacket/docker_images/wheels-tx2/Dockerfile
 
-# FROM arm64v8/ubuntu:xenial-20181113
-FROM flacjacket/cuda-tx2:3.3-20181207 as wheel_builder
+FROM arm64v8/ubuntu:xenial-20181113
 
 LABEL maintainer="Alibek Manabayev <alibek@abacustech.co>"
 
@@ -31,7 +30,5 @@ RUN  apt-get update \
   && pip wheel $WHEEL_OPTS $PIP_OPTS cffi==1.11.5 \
                                      grpcio==1.17.0 \
 	&& pip3 wheel $WHEEL_OPTS $PIP_OPTS $NUMPY_OPTS numpy==$NUMPY_VER cython \
-	&& pip3 instal /wheelhouse/Cython*.whl /wheelhouse/numpy*.whl \
-	&& pip3 wheel $WHEEL_OPTS yolo34py-gpu \
   && rm /wheelhouse/six* /wheelhouse/pycparser* \
   && rm -rf /usr/local/lib /usr/local/bin /var/cache/apt /var/lib/apt/lists/* get-pip.py
