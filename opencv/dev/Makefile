@@ -1,21 +1,21 @@
 #include make_env
 
 NS ?= mannyfm
-VERSION ?= gtk-3.4.5
+VERSION ?= 3.4.5-gtk-nocuda
 
 IMAGE_NAME ?= tx2-opencv-dev
 CONTAINER_NAME ?= tx2-opencv-dev
 CONTAINER_INSTANCE ?= default
 DOCKER ?= tx2-docker
 
-.PHONY: build push shell run start stop rm release 
+.PHONY: build push shell run start stop rm release
 
 build: Dockerfile
 	$(DOCKER) build --squash -t $(NS)/$(IMAGE_NAME):$(VERSION) -f Dockerfile .
 
 push:
 	$(DOCKER) push $(NS)/$(IMAGE_NAME):$(VERSION)
- 
+
 shell:
 	$(DOCKER) run --rm --name $(CONTAINER_NAME)-$(CONTAINER_INSTANCE) -i -t $(PORTS) $(VOLUMES) $(ENV) $(NS)/$(IMAGE_NAME):$(VERSION) /bin/bash
 
@@ -35,4 +35,3 @@ release: build
 	make push -e VERSION=$(VERSION)
 
 default: build
-
